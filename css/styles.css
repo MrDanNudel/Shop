@@ -25,19 +25,17 @@ body {
 .navbar .logo {
   position: relative;
   left: 60px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  letter-spacing: 4px;
-  font-size: 20px;
-  color: #101010;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  letter-spacing: 3px;
+  font-size: 25px;
+  color: #655b5b;
+  transition: 0.5s ease-in-out;
 }
 
-.logo {
-  position: relative;
-  left: 60px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  letter-spacing: 4px;
-  font-size: 20px;
-  color: #101010;
+.navbar .logo:hover {
+  cursor: pointer;
+  color: #000000;
+  letter-spacing: 4.5px;
 }
 
 .navbar nav {
@@ -73,6 +71,17 @@ body {
 
 .main-heading p {
   font-size: 18px;
+}
+
+#intro-text {
+  /* Initially invisible */
+  opacity: 0;
+  transition: opacity 2s ease; /* Smooth fade and movement */
+}
+
+.visible {
+  opacity: 1; /* Fully visible */
+  /* Move back to its original position */
 }
 
 /* Search Area */
