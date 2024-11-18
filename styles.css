@@ -1,0 +1,277 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  position: relative;
+  left: 60px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 4px;
+  font-size: 20px;
+  color: #101010;
+}
+
+.logo {
+  position: relative;
+  left: 60px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 4px;
+  font-size: 20px;
+  color: #101010;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar .nav-button {
+  background-color: #323030;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar .nav-button:hover {
+  background-color: #ff5722;
+}
+
+/* Main Heading */
+.main-heading {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #101010, #2e126b);
+  color: white;
+}
+
+.main-heading h1 {
+  font-size: 36px;
+}
+
+.main-heading p {
+  font-size: 18px;
+}
+
+/* Search Area */
+.search-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  gap: 10px;
+}
+
+.search-area input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-area button {
+  padding: 15px 25px;
+  position: relative;
+  bottom: 6px;
+  font-size: 16px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-area button:hover {
+  background-color: #e84311;
+}
+.item-catagories-title {
+  display: flex;
+  justify-content: center; /* Centers the content horizontally */
+  gap: 20px; /* Adds space between items */
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding-bottom: 20px;
+  font-weight: bold;
+  color: #787878;
+}
+
+.spacer {
+  width: 10px;
+}
+
+/* Items Grid */
+.items-grid {
+  display: flex;
+  overflow: hidden; /* Hide overflowing items */
+  position: relative;
+  padding: 15px 0;
+}
+
+.items-container {
+  display: flex;
+  gap: 15px;
+  width: auto; /* Adjust for content width */
+}
+
+.items-grid {
+  position: relative;
+}
+
+.items-container {
+  animation: scroll-right 110s linear infinite;
+}
+
+.items-grid:hover .items-container {
+  animation-play-state: paused; /* Pause animation on hover */
+  cursor: pointer;
+}
+
+.item-card {
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+  background-color: white;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Same size for all cards */
+  height: 400px; /* Same height for all cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between image and description */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-card img {
+  width: 100%; /* Full width of the card */
+  height: 200px; /* Fixed height for the image */
+  object-fit: cover; /* Make sure the image fits properly */
+  border-radius: 5px;
+}
+
+.item-card h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+
+.item-card p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  width: 320px;
+  height: 420px;
+
+  box-shadow: 0 4px 10px rgba(232, 227, 227, 0.2);
+}
+
+/* Sliding Animation */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9; /* Apply the background only to the login page */
+}
+
+.login-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.log-in-page {
+  height: 0px;
+}
+
+#log-in-title {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+form {
+  position: relative;
+  bottom: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.signup-link {
+  text-align: center;
+}
+
+.signup-link a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
