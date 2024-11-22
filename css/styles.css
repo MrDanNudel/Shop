@@ -13,22 +13,44 @@ body {
 }
 
 /* Navbar */
-.navbar {
+/* Common style for all buttons */
+.button {
+  display: inline-block;
+  padding: 10px 10px; /* Adjust padding if needed to maintain the same size */
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #7842eb; /* Red color */
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 160px;
+  height: 50px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+
+/* Hover effect for buttons */
+.button:hover {
+  background-color: #4909d3; /* Red color */* Darker red for hover */
+}
+
+/* Container for buttons aligned to the right */
+.button-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffffff;
-  color: #fff;
-  padding: 10px 20px;
+  justify-content: flex-end; /* Align buttons to the right */
+  align-items: center; /* Vertically center if necessary */
+  gap: 15px; /* Equal space between buttons */
 }
 
 .navbar .logo {
   position: relative;
   left: 60px;
+  top: 40px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #000000;
   letter-spacing: 3.5px;
-  font-size: 25px;
+  font-size: 30px;
   transition: 0.5s ease-in-out;
   text-decoration: none;
 }
@@ -37,33 +59,6 @@ body {
   cursor: pointer;
   color: #000000;
   letter-spacing: 4.5px;
-}
-
-.navbar .nav-button {
-  background-color: #323030;
-  color: #ffffff;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.5s;
-}
-
-.navbar .nav-button:hover {
-  background-color: #ff5722;
-}
-
-#loginButton {
-  transition: background-color 0.3s;
-  position: relative;
-  top: 1px;
-  font-weight: bold;
-  border-radius: 5px;
-  padding: 8px 8px;
-  width: 550px;
-  font-size: 15px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-decoration: none;
 }
 
 /* Main Heading */
@@ -226,7 +221,7 @@ body {
 .item-card {
   flex: 0 0 auto; /* Prevent flex items from shrinking */
   background-color: white;
-  border: 1px solid #000000;
+  border: 3px solid #bfb3b3;
   border-radius: 5px;
   text-align: center;
   padding: 5px;
@@ -257,9 +252,10 @@ body {
 
 .item-card p {
   margin: 5px 0;
-  color: #6d6161;
-  font-size: 19px;
+  color: #5d5757;
+  font-size: 21px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 .item-card:hover {
@@ -267,7 +263,7 @@ body {
   width: 320px;
   height: 420px;
 
-  box-shadow: 0 4px 10px rgba(232, 227, 227, 0.2);
+  box-shadow: 0 4px 10px rgba(180, 159, 159, 0.2);
 }
 
 p.price {
@@ -276,7 +272,7 @@ p.price {
   top: 3px;
   height: 40px;
   text-align: center;
-  background-color: #045b6c;
+  background-color: #05135d;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
 
@@ -369,6 +365,7 @@ button:hover {
 /* Footer Styling */
 
 .footer {
+  margin-top: 100px;
   background-color: #333;
   color: #fff;
   padding: 40px 20px;
