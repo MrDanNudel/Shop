@@ -32,7 +32,7 @@ body {
 
 /* Hover effect for buttons */
 .button:hover {
-  background-color: #4909d3; /* Red color */* Darker red for hover */
+  background-color: #4909d3; /* Red color */
 }
 
 /* Container for buttons aligned to the right */
@@ -231,7 +231,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Space between image and description */
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.item-card:hover {
+  transform: scale(1.03); /* Slightly enlarge the card on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+
+  border: 4px solid #0f377e;
+}
+
+.item-card {
+  transition-timing-function: ease; /* Smooth transition on hover */
 }
 
 .item-card img {
@@ -255,15 +266,6 @@ body {
   color: #5d5757;
   font-size: 21px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-}
-
-.item-card:hover {
-  transform: translateY(-5px);
-  width: 320px;
-  height: 420px;
-
-  box-shadow: 0 4px 10px rgba(180, 159, 159, 0.2);
 }
 
 p.price {
@@ -365,7 +367,7 @@ button:hover {
 /* Footer Styling */
 
 .footer {
-  margin-top: 100px;
+  margin-top: 200px;
   background-color: #333;
   color: #fff;
   padding: 40px 20px;
@@ -440,5 +442,92 @@ button:hover {
   .footer-container {
     flex-direction: column;
     text-align: left;
+  }
+}
+
+/* Modal overlay with a semi-transparent black background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content with dark background */
+.modal-content {
+  background-color: #1e1e1e; /* Dark gray background */
+  color: #f5f5f5; /* Light text color */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  width: 350px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Form styling */
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 200px;
+}
+
+#login-form input {
+  padding: 10px;
+  background-color: #333; /* Darker input background */
+  color: #fff; /* White text */
+  border: 1px solid #444; /* Subtle border */
+  border-radius: 5px;
+}
+
+#login-form input:focus {
+  outline: none;
+  border-color: #4caf50; /* Green border on focus */
+  box-shadow: 0 0 5px #4caf50;
+}
+
+/* Submit button */
+#login-form button {
+  padding: 10px;
+  background-color: #4caf50; /* Green button */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#login-form button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #f5f5f5;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ff6666; /* Red color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%; /* Adjust width for smaller screens */
   }
 }

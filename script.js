@@ -35,4 +35,26 @@ window.onload = function () {
 
   // Repeat the cycle every 10 seconds (5 seconds visible + 5 seconds invisible)
   setInterval(toggleText, 5500); // 10 seconds interval
+
+  // Get the modal, buttons, and close button
+  var modalOverlay = document.getElementById("modal-overlay");
+  var loginBtn = document.getElementById("login-button");
+  var closeBtn = document.getElementById("close-btn");
+
+  // Show the modal when the button is clicked
+  loginBtn.onclick = function () {
+    modalOverlay.style.display = "flex"; // Show the modal
+  };
+
+  // Close the modal when the close button is clicked
+  closeBtn.onclick = function () {
+    modalOverlay.style.display = "none"; // Hide the modal
+  };
+
+  // Close the modal if the user clicks outside of the modal content
+  window.onclick = function (event) {
+    if (event.target == modalOverlay) {
+      modalOverlay.style.display = "none"; // Hide the modal if clicked outside
+    }
+  };
 };
