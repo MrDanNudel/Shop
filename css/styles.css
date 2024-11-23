@@ -367,7 +367,7 @@ button:hover {
 /* Footer Styling */
 
 .footer {
-  margin-top: 200px;
+  margin-top: 100px;
   background-color: #333;
   color: #fff;
   padding: 40px 20px;
@@ -452,7 +452,7 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
+  background-color: rgba(13, 13, 13, 0.91); /* Darker overlay */
   display: none;
   justify-content: center;
   align-items: center;
@@ -461,12 +461,13 @@ button:hover {
 
 /* Modal content with dark background */
 .modal-content {
-  background-color: #1e1e1e; /* Dark gray background */
+  position: relative;
+  top: 150px;
   color: #f5f5f5; /* Light text color */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   width: 350px;
+  height: 200px;
   text-align: center;
   font-family: Arial, sans-serif;
 }
@@ -476,7 +477,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  height: 200px;
+  height: 1dvh;
 }
 
 #login-form input {
@@ -505,14 +506,14 @@ button:hover {
 }
 
 #login-form button:hover {
-  background-color: #45a049; /* Slightly darker green on hover */
+  background-color: #000000; /* Slightly darker green on hover */
 }
 
 /* Close button */
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  bottom: 400px;
+  right: 1px;
   background-color: transparent;
   border: none;
   font-size: 20px;
@@ -522,7 +523,8 @@ button:hover {
 }
 
 .close-btn:hover {
-  color: #ff6666; /* Red color on hover */
+  color: #ffffff;
+  background-color: rgb(0, 0, 0); /* Red color on hover */
 }
 
 /* Responsive Design */
@@ -530,4 +532,88 @@ button:hover {
   .modal-content {
     width: 90%; /* Adjust width for smaller screens */
   }
+}
+/* Slider container */
+.pants-slider-section {
+  margin-top: 50px;
+  width: 100%; /* Ensure full-width of parent container */
+  overflow: hidden; /* Hide items that go outside the container */
+  position: relative;
+}
+
+/* Items container that holds the item cards */
+.pants-slider-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  transition: transform 0.3s ease; /* Smooth transition for sliding effect */
+  width: fit-content; /* Adjust width based on content (no space left) */
+  margin: 0;
+  height: 700px;
+  padding: 0;
+}
+.pants-item-card img {
+  width: 450px;
+  height: 450px;
+}
+
+.pants-item-card .price {
+  background-color: #282834;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  border-radius: 5px;
+  height: 50px;
+  text-align: center;
+  margin-top: 13px;
+  letter-spacing: 3px;
+  transition: background-color 0.7s ease-in-out;
+}
+.pants-item-card h3 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 35px;
+  color: #313236;
+  opacity: 0.8;
+  padding-top: 10px;
+  transition: letter-spacing 0.2s ease-in, text-decoration 1.2s ease-in-out;
+}
+
+/* Item cards inside the container */
+.pants-item-card {
+  flex-shrink: 0; /* Prevent items from shrinking */
+  width: 500px; /* Adjust the width of each item card */
+  margin: 4; /* No margin between items to ensure no gaps */
+  padding: 20px;
+  margin-left: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.pants-item-card .stock-p {
+  color: rgb(89, 82, 82);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  margin-top: 15px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  transition: letter-spacing 0.3s ease-in-out;
+}
+
+.pants-item-card:hover {
+  cursor: pointer;
+  .price {
+    background-color: rgb(219, 89, 89);
+    letter-spacing: 3px;
+  }
+  h3 {
+    letter-spacing: 3px;
+    text-decoration: underline;
+    color: #000000;
+    font-weight: bold;
+  }
+  .stock-p {
+    letter-spacing: 1.5px;
+  }
+  transform: scale(1.1);
 }

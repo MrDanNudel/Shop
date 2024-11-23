@@ -57,4 +57,34 @@ window.onload = function () {
       modalOverlay.style.display = "none"; // Hide the modal if clicked outside
     }
   };
+  let currentIndex = 0;
+  const itemsContainer = document.querySelector(".pants-slider-container");
+  const totalItems = document.querySelectorAll(".pants-item-card").length;
+  const itemWidth = 200; // Width of each item
+  const itemMargin = 10; // Margin between items (adjust if necessary)
+  const itemsToShow = 3; // Number of items to show at once
+
+  // Function to move the slider
+  function moveSlider(direction) {
+    // Calculate the new index
+    currentIndex = (currentIndex + direction) % totalItems;
+    if (currentIndex < 0) currentIndex = totalItems - 1;
+
+    // Calculate the offset (itemsWidth + margin)
+    const offset = -(currentIndex * (itemWidth + itemMargin)); // Item width + margin
+
+    // Move the container to the new position
+    itemsContainer.style.transform = `translateX(${offset}px)`;
+  }
+
+  // Optional: Add event listeners for next/prev buttons
+  document
+    .querySelector(".next")
+    .addEventListener("click", () => moveSlider(1));
+  document
+    .querySelector(".prev")
+    .addEventListener("click", () => moveSlider(-1));
+
+  // Automatically move slider every 3 seconds (optional)
+  setInterval(() => moveSlider(1), 3000);
 };
